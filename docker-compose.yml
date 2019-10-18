@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  xlorpaste-backend:
+    image: xlorpaste-backend
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - /D/5-Project/XLorPaste/XLorPaste-Backend:/backend
