@@ -1,11 +1,15 @@
 FROM node
 
 RUN apt-get update \
-    && apt-get install -y mongodb
+    && apt-get install -y mongodb \
+    && npm install -g typescript yarn
+
+ADD . /backend
 
 WORKDIR /backend
 
+RUN yarn && chmod +x run.sh
+
 EXPOSE 3000
 
-# ENTRYPOINT [ "service", "mongodb", "start" ]
-ENTRYPOINT ["sleep", "infinity"]
+ENTRYPOINT ["./run.sh"]
