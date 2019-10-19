@@ -9,6 +9,7 @@
     "lint": "yarn prettier --write src/**.ts"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.1",
     "@types/mongoose": "^5.5.21",
     "@types/node": "^12.11.1",
