@@ -7,7 +7,10 @@ import { MongodbURI } from './config';
 
 import codeRouter from './router'
 
-mongoose.connect(MongodbURI, { useNewUrlParser: true });
+mongoose.connect(MongodbURI, { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+});
 const db = mongoose.connection;
 db.on('error', err => {
   console.log('Connect Error');
