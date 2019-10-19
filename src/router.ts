@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import Code, { getToken } from './models'
+import { b64decode } from './util'
 
 const router = Router();
 
@@ -28,14 +29,19 @@ router.get('/:token', async (req, res) => {
     const code = await Code.findOne({
       token: req.params.token
     });
-    res.send({
-      token: code.token,
-      body: code.body,
-      lang: code.lang
-    });
-  } catch (error) {
+    if ('raw' in req.query) {
+      res.setHeader('Content-Type', 'text/plain');
+      res.send(b64decode(code.body));
+    } else {
+      res.send({
+        token: code.token,
+        body: code.body,
+        lang: code.lang
+      });
+    }
+  } catch (err) {
     res.status(404).send({
-      error: error.name
+      error: err.name
     });
   }
 });
