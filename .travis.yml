@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "10.9"
+
+services:
+  - docker
+
+script:
+  - docker build -t xlorpaste-backend .
+  - docker run --name=xlorpaste -d -p 3000:3000 xlorpaste-backend
