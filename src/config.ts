@@ -1,4 +1,4 @@
-export const MongodbURI = 'mongodb://localhost:27017/xlorpaste';
+export const MongodbURI = 'mongodb://db:27017/xlorpaste';
 
 export enum LANG {
   text = 'text',

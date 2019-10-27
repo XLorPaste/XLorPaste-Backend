@@ -1,14 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import cors from 'cors'
+import cors from 'cors';
 import mongoose from 'mongoose';
 
 import { MongodbURI } from './config';
 
-import codeRouter from './router'
+import codeRouter from './router';
 
-mongoose.connect(MongodbURI, { 
-  useNewUrlParser: true, 
+mongoose.connect(MongodbURI, {
+  useNewUrlParser: true,
   useUnifiedTopology: true
 });
 const db = mongoose.connection;
@@ -27,9 +27,11 @@ app.set('port', process.env.PORT ? process.env.PORT : 3000);
 
 app.use(bodyParser.json());
 
-app.use(cors({
-  origin: '*'
-}));
+app.use(
+  cors({
+    origin: '*'
+  })
+);
 
 app.use('/', codeRouter);
 

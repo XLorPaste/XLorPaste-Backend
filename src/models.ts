@@ -11,7 +11,7 @@ export type CodeDocument = Document & {
 
 const CodeSchema = new Schema({
   token: {
-    type: String,
+    type: String
   },
   body: {
     type: String,

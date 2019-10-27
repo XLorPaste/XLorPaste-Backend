@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node ./dist/index.js",
-    "lint": "yarn prettier --write src/**.ts"
+    "lint": "yarn prettier --parser typescript --write src/**.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import Code, { getToken } from './models'
-import { b64decode } from './util'
+import Code, { getToken } from './models';
+import { b64decode } from './util';
 
 const router = Router();
 
