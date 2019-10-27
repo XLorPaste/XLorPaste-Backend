@@ -2,7 +2,18 @@ version: '2.1'
 
 services:
   xlorpaste-backend:
+    container_name: backend
     image: xlorpaste-backend
-    build: .
+    build:
+      context: .
     ports:
-      - 3000:3000
+      - 5000:3000
+    links:
+      - db
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mongo
+    expose:
+      - 27017
