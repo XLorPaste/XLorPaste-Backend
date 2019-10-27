@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   xlorpaste-backend:
-    container_name: backend
+    container_name: xlorpaste
     image: xlorpaste-backend
     build:
       context: .
