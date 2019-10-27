@@ -29,7 +29,7 @@ router.get('/:token', async (req, res) => {
     const code = await Code.findOne({
       token: req.params.token
     });
-    if ('raw' in req.query) {
+    if ('raw' in req.query && req.query.raw !== 'false') {
       res.setHeader('Content-Type', 'text/plain');
       res.send(b64decode(code.body));
     } else {
