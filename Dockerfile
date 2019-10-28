@@ -8,7 +8,7 @@ WORKDIR /backend
 
 ENV NODE_ENV=production
 
-RUN yarn install && chmod +x run.sh
+RUN yarn install --production=false && chmod +x run.sh
 
 EXPOSE 3000
 
