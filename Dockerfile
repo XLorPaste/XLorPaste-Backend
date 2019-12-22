@@ -6,7 +6,7 @@ WORKDIR /backend
 
 ENV NODE_ENV=production
 
-RUN npm install -g typescript yarn && yarn install
+RUN npm install -g --force typescript yarn && yarn install
 
 EXPOSE 3000
 
