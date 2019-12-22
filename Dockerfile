@@ -1,14 +1,12 @@
 FROM node
 
-RUN npm install -g typescript yarn
-
 ADD . /backend
 
 WORKDIR /backend
 
 ENV NODE_ENV=production
 
-RUN yarn install --production=false && chmod +x run.sh
+RUN npm install -g typescript yarn && yarn install
 
 EXPOSE 3000
 

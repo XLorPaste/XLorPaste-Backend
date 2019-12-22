@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import helmet from 'helmet';
+import csurf from 'csurf';
 import mongoose from 'mongoose';
 
 import { MongodbURI } from './config';
@@ -32,6 +34,10 @@ app.use(
     origin: '*'
   })
 );
+
+app.use(helmet());
+
+app.use(csurf());
 
 app.use('/', codeRouter);
 
