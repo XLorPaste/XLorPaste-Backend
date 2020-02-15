@@ -3,9 +3,10 @@ export const MongodbURI = 'mongodb://db:27017/xlorpaste';
 export enum LANG {
   text = 'text',
   cpp = 'cpp',
-  python = 'py',
+  python = 'python',
   java = 'java',
   html = 'html',
-  js = 'js',
-  markdown = 'md'
+  css = 'css',
+  javascript = 'javascript',
+  markdown = 'markdown'
 }
